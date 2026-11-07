@@ -1,0 +1,49 @@
+{
+  "name": "ct-dsh-stats",
+  "version": "0.1.0",
+  "description": "在 Codex 显示本地会话和每轮用量统计。",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "playwright-core": "1.61.0",
+    "pngjs": "7.0.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  },
+  "scripts": {
+    "test": "node --test test/format.test.mjs test/rollout.test.mjs test/backend.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:browser": "node test/package-browser.mjs"
+  },
+  "codexTweaks": {
+    "apiVersion": 3,
+    "entrypoints": {
+      "renderer": "src/index.ts",
+      "node": "src/node.mjs"
+    },
+    "priority": 100,
+    "packageDependencies": {},
+    "permissions": {
+      "node": {
+        "reason": "只读本机 Codex 会话日志，提取当前聊天的 Token、缓存和耗时统计；日志可能含聊天内容。功能包代码不上传数据。Node 授权提供当前用户完整权限。"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Penguinshen/codex-tweaks-dsh-stats.git"
+  },
+  "homepage": "https://github.com/Penguinshen/codex-tweaks-dsh-stats",
+  "keywords": [
+    "codex-tweaks-package",
+    "codex-tweaks-node",
+    "codex-tweaks-workflow"
+  ],
+  "license": "MIT"
+}
