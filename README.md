@@ -2,6 +2,8 @@
 
 非官方 Codex Tweaks 功能包：在 Codex 桌面应用显示会话统计和已完成轮次用量。与 OpenAI、DeepSeek 和 Codex Tweaks 无隶属关系。
 
+Windows x64 独立启动预览版已发布，安装包内附 Node.js，可从独立入口直接启动 Codex。[独立预览版下载](https://github.com/Penguinshen/codex-tweaks-dsh-stats/releases/tag/standalone-v0.1.1-preview)
+
 ## 当前状态
 
 测试版：已在 Windows 的 Codex Tweaks 中验证本地导入、编译、授权和显示统计弹窗；Git 安装、重启后的自动加载和停用尚待验证。macOS 尚未实机验证。
