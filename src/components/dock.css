@@ -1,0 +1,26 @@
+.codex-dsh-dock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  min-height: calc(22px + var(--dsh-content-font-delta-secondary, 0px));
+  padding-top: 4px;
+  box-sizing: content-box;
+}
+/* Keep the dock and native composer in the same flow and use the space below both. */
+[data-thread-scroll-footer="true"][class~="pb-(--thread-composer-bottom-inset)"]:has([data-codex-dsh-mount="dock"]) {
+  padding-bottom: max(0px, calc(var(--thread-composer-bottom-inset, 0px) - 8px));
+}
+
+[data-codex-dsh-mount="dock"] {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+[data-codex-dsh-mount="turn"] {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+}
+

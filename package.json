@@ -1,0 +1,26 @@
+{
+  "name": "codex-dsh-stats",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/bundle.mjs",
+    "test": "node --test test/format.test.mjs test/rollout.test.mjs",
+    "test:browser": "node test/browser.mjs",
+    "attach": "node scripts/attach.mjs",
+    "detach": "node scripts/attach.mjs --detach"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "playwright-core": "1.61.0",
+    "pngjs": "7.0.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  }
+}

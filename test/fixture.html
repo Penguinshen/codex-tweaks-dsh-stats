@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN" data-dsh-stats-theme="dark">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSH 用量组件视觉夹具</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #e5e5e5; background: #1a1a1a; font: 14px "Segoe UI", "Microsoft YaHei", sans-serif; }
+  button { font-family: inherit; }
+  .layout { max-width: 580px; margin: auto; padding: 0 16px 12px; }
+  .exchange { padding-top: 169px; }
+  .prompt { margin: 0 0 22px auto; width: max-content; padding: 8px 14px; background: #303030; border-radius: 16px; }
+  .answer { margin: 0 0 6px; }
+  .actions { display: flex; align-items: center; gap: 8px; height: 28px; color: #adb2b8; }
+  .actions > button { display: inline-grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; color: inherit; background: none; }
+  .actions time { font-size: 12px; }
+  [data-reference-turn], [data-codex-dsh-mount="turn"] { margin-left: 8px; }
+  .layout { position: relative; min-height: 100vh; }
+  .composer-footer {
+    position: absolute;
+    inset-inline: 16px;
+    bottom: 4px;
+    --thread-composer-bottom-inset: 16px;
+    padding-bottom: var(--thread-composer-bottom-inset);
+  }
+  .field { display: flex; align-items: center; justify-content: space-between; background: #292929;
+    border: 1px solid #3c3c3c; border-radius: 16px; padding: 12px 14px; }
+  .field [contenteditable] { color: #adb2b8; flex: 1; }
+  .field button { background: #e7e7e7; border: none; border-radius: 50%; width: 28px; height: 28px; color: #242424; }
+</style>
+<main class="layout" data-thread-find-target="conversation">
+  <section class="exchange" data-turn-key="example">
+    <p class="prompt">帮我整理一下这轮的结果。</p>
+    <p class="answer">已整理完成。你可以在下方查看本轮和会话的用量。</p>
+    <div class="actions turn-action-controls justify-start" aria-label="助手消息操作">
+      <button type="button" aria-label="复制回复" data-artwork="copy-outline"></button>
+      <button type="button" aria-label="赞" data-artwork="like-outline"></button>
+      <button type="button" aria-label="踩" data-artwork="dislike-outline"></button>
+      <button type="button" aria-label="分支" data-artwork="branch-outline"></button>
+      <time>20:54</time>
+    </div>
+  </section>
+  <div class="composer-footer pb-(--thread-composer-bottom-inset)" data-thread-scroll-footer="true">
+    <div data-thread-find-composer="true">
+      <div class="field"><div contenteditable="true" role="textbox" aria-label="输入消息">输入消息</div><button type="button" aria-label="发送">↑</button></div>
+    </div>
+  </div>
+</main>
+<script type="module" src="/test/fixture.ts"></script>
+</html>
+
